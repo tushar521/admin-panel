@@ -1,0 +1,41 @@
+<div class="screen-start">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav style="width: 220px; position: fixed;" mode="side" [(opened)]="utilService.sideNavOpen">
+      <div>
+        <!-- <a style="padding-top: 10px;" (click)="goToScreen('landingPage')">  Home </a>
+        <mat-divider></mat-divider>
+        <a (click)="goToScreen('addProduct')">Add Product</a>
+        <mat-divider></mat-divider>
+        <a (click)="goToScreen('allProducts')">All Products</a>
+        <mat-divider></mat-divider>
+        <a (click)="goToScreen('addFood')">Add Food Items</a>
+        <mat-divider></mat-divider>
+        <a (click)="goToScreen('manageCatagories')"> Add Categories </a>
+        <mat-divider></mat-divider> -->
+        <a (click)="goToScreen('allUsers')"> Manage Candidate </a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- <div *ngIf="defaultPage === 'landingPage'">
+        <app-landing-page></app-landing-page>
+      </div> -->
+      <div *ngIf="defaultPage === 'allUsers'">
+        <app-all-users></app-all-users>
+      </div>
+      <!-- <div *ngIf="defaultPage === 'manageCatagories'">
+        <app-manage-categories></app-manage-categories>
+      </div>
+      <div *ngIf="defaultPage === 'addProduct'">
+        <app-add-product></app-add-product>
+      </div>
+      <div *ngIf="defaultPage === 'allProducts'">
+        <app-all-products></app-all-products>
+      </div>
+      <div *ngIf="defaultPage === 'addFood'">
+        <app-add-food></app-add-food>
+      </div> -->
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

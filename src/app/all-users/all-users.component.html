@@ -1,0 +1,109 @@
+<div>
+  <!-- <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Peter">
+  </mat-form-field> -->
+
+  <div style="text-align: center; margin-top: 20px;">
+    <select style="margin: 2px; padding: 5px; width: 200px;" (change)="onFnAreaChange($event.target.value)"
+      [(ngModel)]="selectedFnArea" name="selectedFnArea">
+      <option value="default" selected hidden>Select User Type</option>
+      <option *ngFor="let designation of functionalAreas" value="{{designation}}">{{designation}}</option>
+    </select>
+
+    <select style="margin: 2px; padding: 5px; width: 200px;" (change)="onQualificationChange($event.target.value)"
+      [(ngModel)]="selectedQualification" name="selectedQualification">
+      <option value="default" selected hidden>Select Category</option>
+      <option *ngFor="let designation of qualification" value="{{designation}}">{{designation}}</option>
+    </select>
+
+    <br>
+    <br>
+    <mat-form-field style="width: 400px;">
+      <input matInput [(ngModel)]="searchText" name="searchText" placeholder="Search by name">
+    </mat-form-field>
+    <br>
+    <button mat-button color="primary" style="margin: 2px; border: 1px solid gray;"
+      (click)="searchResult()">Search</button>
+    <button mat-button style="margin: 2px; border: 1px solid gray;" (click)="getAllUsers()">Reset</button>
+  </div>
+
+  <br>
+  <br>
+  <span style="font-size: 20px; margin-left: 20px;">CANDIDATES</span>
+  <br>
+  
+  <div>
+    <button mat-button style="margin: 2px; border: 1px solid gray; float:right;">Delete</button>
+    <button mat-button color="primary" style="margin: 2px; border: 1px solid gray; float:right;">Add</button>
+  </div>
+  <br>
+  <br>
+
+  <table style="margin: 15px; " mat-table [dataSource]="usersData" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <input type="checkbox" (click)="checkedBox(element.user_code)" />
+      </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="fullname">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.fullname}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="password">
+      <th mat-header-cell *matHeaderCellDef> Password </th>
+      <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="functional_area">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.functional_area}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="education_qualification">
+      <th mat-header-cell *matHeaderCellDef> User Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.education_qualification}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="profile">
+      <th mat-header-cell *matHeaderCellDef> Profile </th>
+      <td mat-cell *matCellDef="let element"> <img src="{{element.profile}}" style="margin: 10px;" width="100px"
+          height="100px" /> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="created_on">
+      <th mat-header-cell *matHeaderCellDef> Created On </th>
+      <td mat-cell *matCellDef="let element"> {{element.created_on}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="editEntry(element.user_code)" mat-button><span class="material-icons" style="color: green;">
+            edit
+          </span></button>
+        <button (click)="deleteEntry(element.user_code)" mat-button><span class="material-icons" style="color: tomato;">
+            delete
+          </span></button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <br><br>
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="pageEvent = $event">
+  </mat-paginator>
+
+</div>

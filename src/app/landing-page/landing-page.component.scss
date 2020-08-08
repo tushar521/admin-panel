@@ -1,0 +1,26 @@
+.chart-wrapper {
+  text-align: center;
+}
+
+.chart-container {
+  text-align: center;
+  position: relative;
+  height: 120 !important;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .chart-container {
+      width: 600;
+      height: 200;
+    // text-align: center;
+    // position: relative;
+    // height: 140vh;
+    // width: 90%;
+    // margin-left: 5%;
+    // margin-right: 5%;
+  }
+}

@@ -1,0 +1,40 @@
+.right-header-menu {
+  float: right;
+  padding-right: 25px;
+  margin-top: 5px;
+}
+
+.left-header-menu {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.logout-icon {
+  width: 37px;
+  height: 37px;
+}
+
+.menu-icon {
+  padding-left: 10px;
+  width: 37px;
+  height: 37px;
+}
+
+@media only screen and (max-width: 600px) {
+  .right-header-menu {
+    float: right;
+    padding-right: 15px;
+    margin-top: 5px;
+  }
+
+
+  .left-header-menu {
+    padding-left: 20px;
+    font-size: 15px;
+  }
+
+  .logout-icon {
+    width: 33px;
+    height: 33px;
+  }
+}

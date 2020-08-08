@@ -1,0 +1,27 @@
+/* Structure */
+table {
+  width: -webkit-fill-available;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: -webkit-fill-available;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #F0F0F0;
+  background-color: #F4F4F4;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content:center;
+  border: 1px solid #F0F0F0;
+}

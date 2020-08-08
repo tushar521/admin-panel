@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+  <h3>Payments By Month:</h3>
+</div>
+<div class="chart-wrapper" *ngIf="showGrapth">
+  <div class="chart-container">
+    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+      [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+</div>
+
+<!-- <mat-devider></mat-devider> -->
+<br><br>
+<div style="text-align: center;">
+  <h3>Orders By Month:</h3>
+</div>
+<div class="chart-wrapper" *ngIf="showGrapth">
+  <div class="chart-container">
+    <canvas baseChart [datasets]="lineChartData2" [labels]="lineChartLabels" [options]="lineChartOptions"
+      [colors]="lineChartColors" [legend]="lineChartLegend" chartType="bar" [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+</div>
